@@ -1,8 +1,5 @@
 html{
   background: green;
-  margin-top: -10px;
-  margin-left: -10px;
-
 }
 
 .background {   
@@ -35,6 +32,10 @@ html{
   max-width: auto;
   max-height: auto;
   position: relative;
+}
+
+body {
+  margin: 0;
 }
 
 .lost .player {
