@@ -1,5 +1,6 @@
 html{
   background: green;
+  overflow-y: hidden;
 }
 
 .background {   
@@ -28,7 +29,8 @@ html{
 }
 
 .game {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   max-width: auto;
   max-height: auto;
   position: relative;
