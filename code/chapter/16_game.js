@@ -349,11 +349,22 @@ function runLevel(level, Display) {
   });
 }
 
-async function runGame(plans, Display) {
-  for (let level = 0; level < plans.length;) {
-    let status = await runLevel(new Level(plans[level]),
-                                Display);
-    if (status == "won") level++;
+async function runGame ( plans, Display )
+{
+  this.lives = 3;
+  this.livesView = document.getElementById( "livesli" );
+  this.nivelView = document.getElementById( "nivelli" );
+
+  for ( let level = 0; level < plans.length && lives > 0; ) {
+    console.log( `level: ${level + 1}`, `lives: ${lives}` );
+    let status = await runLevel( new Level( plans[ level ] ),
+      Display );
+    if ( status == "won" ) {
+      level++;
+      this.nivelView.innerHTML = "Level: " + `${level + 1}`;
+    } else {
+      lives--;
+      this.livesView.innerHTML = "Lives: " + this.lives;
+    }
   }
-  console.log("You've won!");
 }

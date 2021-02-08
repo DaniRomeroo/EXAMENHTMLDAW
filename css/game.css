@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
 html{
   background: green;
   overflow-y: hidden;
@@ -46,9 +48,17 @@ body {
 .won .player {
   box-shadow: -4px -7px 8px white, 4px -7px 8px white;
 }
+#lista {
+  font-size: 20px;
+  top: 62%;
+  position: absolute;
+  color: white;
+  list-style-type: none;
+  font-family: 'Raleway', Arial, sans-serif;
+  z-index: 99999;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-
+/* MENU */
 .Menu {
   font-family: 'Raleway', Arial, sans-serif;
   text-align: center;
@@ -125,4 +135,64 @@ body {
   -webkit-transform: translate(0%, 0%);
   transform: translate(0%, 0%);
   opacity: 1;
+}
+
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  position: fixed;
+  z-index: 9999;
+  background: green;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* LOADER */
+.loading {
+  width: 100px;
+  height: 100px;
+}
+
+.loading__ring {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.loading__ring:first-child {
+  transform: skew(30deg, 20deg);
+}
+
+.loading__ring:last-child {
+  transform: skew(-30deg, -20deg) scale(-1, 1);
+}
+
+.loading__ring:last-child svg {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.loading__ring svg {
+  -webkit-animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
+  fill: rgba(0, 0, 0, 0.2);
 }
