@@ -27,7 +27,7 @@ html{
   background: rgb(241, 229, 89);
 }
 .player { 
-  background: linear-gradient(green, rgba(105, 45, 5, 0.808));
+  background: linear-gradient(to bottom, green 50%, rgba(105, 45, 5, 0.808) 50%);
 }
 
 .game {
@@ -51,7 +51,7 @@ body {
 
 .lista {
   font-size: 17px;
-  top: 70%;
+  top: 77%;
   position: absolute;
   font-weight: bold;
   color: white;
