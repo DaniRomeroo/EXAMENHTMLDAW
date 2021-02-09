@@ -67,8 +67,8 @@ body {
   display: inline;
 }
 
-#youWin,
-#gameOver {
+#gana2,
+#perdi2 {
   display: none;
   z-index: 999;
   position: absolute;
