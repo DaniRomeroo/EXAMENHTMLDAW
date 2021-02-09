@@ -2,7 +2,7 @@
 
 html{
   background: green;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .background {   
@@ -48,15 +48,19 @@ body {
 .won .player {
   box-shadow: -4px -7px 8px white, 4px -7px 8px white;
 }
-#lista {
-  font-size: 20px;
-  top: 62%;
+
+.lista {
+  font-size: 17px;
+  top: 64%;
   position: absolute;
   color: white;
   list-style-type: none;
   font-family: 'Raleway', Arial, sans-serif;
-  z-index: 99999;
+  text-transform: uppercase;
+  z-index: 999;
+  display: inline;
 }
+
 
 /* MENU */
 .Menu {

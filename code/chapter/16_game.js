@@ -298,22 +298,6 @@ Player.prototype.update = function(time, state, keys) {
   return new Player(pos, new Vec(xSpeed, ySpeed));
 };
 
-function trackKeys(keys) {
-  let down = Object.create(null);
-  function track(event) {
-    if (keys.includes(event.key)) {
-      down[event.key] = event.type == "keydown";
-      event.preventDefault();
-    }
-  }
-  window.addEventListener("keydown", track);
-  window.addEventListener("keyup", track);
-  return down;
-}
-
-var arrowKeys =
-  trackKeys(["ArrowLeft", "ArrowRight", "ArrowUp"]);
-
 function runAnimation(frameFunc) {
   let lastTime = null;
   function frame(time) {
@@ -328,11 +312,32 @@ function runAnimation(frameFunc) {
 }
 
 function runLevel(level, Display) {
+
   let display = new Display(document.body, level);
   let state = State.start(level);
   let ending = 1;
+  let pausa = "mov";
+
   return new Promise(resolve => {
-    runAnimation(time => {
+    function escHandler(event) {
+      if (event.key != "Escape") return;
+      event.preventDefault();
+      if (pausa == "parado") {
+        pausa = "mov";
+        runAnimation(frame);
+      } else if (pausa == "mov") {
+        pausa = "parado";
+      } else {
+        pausa = "mov"
+      }
+    }
+    window, addEventListener("keydown", escHandler);
+    let arrowKeys = trackKeys(["ArrowLeft", "ArrowRight", "ArrowUp"]);
+
+    function frame(time) {
+      if (pausa == "parado") {
+        return false;
+      }
       state = state.update(time, arrowKeys);
       display.syncState(state);
       if (state.status == "playing") {
@@ -342,11 +347,32 @@ function runLevel(level, Display) {
         return true;
       } else {
         display.clear();
+        window.removeEventListener("keydown", escHandler);
+        arrowKeys.unregister();
         resolve(state.status);
         return false;
       }
-    });
+    }
+    runAnimation(frame);
   });
+};
+
+function trackKeys(keys) {
+  let down = Object.create(null);
+
+  function track(event) {
+    if (keys.includes(event.key)) {
+      down[event.key] = event.type == "keydown";
+      event.preventDefault();
+    }
+  }
+  window.addEventListener("keydown", track);
+  window.addEventListener("keyup", track);
+  down.unregister = () => {
+    window.removeEventListener("keydown", track);
+    window.removeEventListener("keyup", track);
+  };
+  return down;
 }
 
 async function runGame ( plans, Display )
