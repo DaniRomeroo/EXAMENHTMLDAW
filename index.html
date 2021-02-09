@@ -23,8 +23,8 @@
     setTimeout( function () {
       document.getElementById( 'loader' ).style.transform = "scale(0)";
       runGame(GAME_LEVELS, DOMDisplay);
-      ocultar( 'youWin' );
-      ocultar( 'gameOver' );
+      ocultar( 'gana2' );
+      ocultar( 'perdi2' );
     }, 2500 );
   </script>
   <ul class="lista">
@@ -35,8 +35,8 @@
     <li><a href=" " onclick="document.location.reload()">Restart</a></li>
     <li><a href="https://github.com/DaniRomeroo"target="_blank">About Me</a></li>
   </ul>
-  <img id="youWin" src="assets/you_win.png">
-  <img id="gameOver" src="assets/game_over.png">
+  <img id="gana2" src="assets/you_win.png">
+  <img id="perdi2" src="assets/game_over.png">
 </body>
 				
 </html>

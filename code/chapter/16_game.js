@@ -381,7 +381,7 @@ async function runGame ( plans, Display )
   this.livesView = document.getElementById( "livesli" );
   this.nivelView = document.getElementById( "nivelli" );
 
-  for ( let level = 0; level < plans.length && lives > 0; )
+  for ( let level = 4; level < plans.length && lives > 0; )
   {
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
@@ -395,9 +395,9 @@ async function runGame ( plans, Display )
     }
   }
   if ( lives <= 0 ) {
-    mostrar( 'gameOver' );
+    mostrar( 'perdi2' );
   } else {
-    mostrar( 'youWin' );
+    mostrar( 'gana2' );
   }
 }
 
