@@ -1,7 +1,6 @@
 <!doctype html>
 <script src="code/chapter/16_game.js"></script>
 <script src="code/levels.js"></script>
-
 <link rel="stylesheet" href="css/game.css">
 
 <div class="loader" id="loader">
@@ -24,6 +23,8 @@
     setTimeout( function () {
       document.getElementById( 'loader' ).style.transform = "scale(0)";
       runGame(GAME_LEVELS, DOMDisplay);
+      ocultar( 'youWin' );
+      ocultar( 'gameOver' );
     }, 2500 );
   </script>
   <ul class="lista">
@@ -34,4 +35,8 @@
     <li><a href=" " onclick="document.location.reload()">Restart</a></li>
     <li><a href="https://github.com/DaniRomeroo"target="_blank">About Me</a></li>
   </ul>
+  <img id="youWin" src="assets/you_win.png">
+  <img id="gameOver" src="assets/game_over.png">
 </body>
+				
+</html>

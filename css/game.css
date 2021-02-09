@@ -10,12 +10,15 @@ html{
   table-layout: fixed;
   border-spacing: 0;
 }
+
 .background td { 
   padding: 0;       
 }
+
 .lava { 
   background: rgb(123, 22, 255);
 }
+
 .wall { 
   background: rgba(209, 94, 0, 0.87);
 }
@@ -23,9 +26,11 @@ html{
 .actor { 
   position: absolute;
 }
+
 .coin { 
   background: rgb(229, 255, 0);
 }
+
 .player { 
   background: linear-gradient(to bottom, green 50%, rgba(105, 45, 5, 0.808) 50%);
 }
@@ -60,6 +65,25 @@ body {
   text-transform: uppercase;
   z-index: 999;
   display: inline;
+}
+
+#youWin,
+#gameOver {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#youWin {
+  width: 40%;
+}
+
+#gameOver {
+  width: 40%;
 }
 
 /* MENU */

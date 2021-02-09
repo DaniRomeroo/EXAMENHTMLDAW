@@ -142,7 +142,7 @@ var DOMDisplay = class DOMDisplay {
 }
 
 var scale = 20;
-
+    
 function drawGrid(level) {
   return elt("table", {
     class: "background",
@@ -378,13 +378,20 @@ function trackKeys(keys) {
 async function runGame ( plans, Display )
 {
   this.lives = 3;
+  this.ended = false;
   this.livesView = document.getElementById( "livesli" );
   this.nivelView = document.getElementById( "nivelli" );
 
-  for ( let level = 0; level < plans.length && lives > 0; ) {
+  for ( let level = 2; level < plans.length && lives > 0; )
+  {
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
+    if (this.lives <= 0 || this.level == 2)
+    {
+      endGame();
+    }
+
     if ( status == "won" ) {
       level++;
       this.nivelView.innerHTML = "Level: " + `${level + 1}`;
@@ -393,4 +400,18 @@ async function runGame ( plans, Display )
       this.livesView.innerHTML = "Lives: " + this.lives;
     }
   }
+    if ( lives <= 0 ) {
+    mostrar( 'gameOver' );
+  } else if ( lives == 2) {
+    mostrar( 'youWin' );
+  }
+}
+
+function ocultar( id ) {
+  var elemento = document.getElementById( id );
+  elemento.style.display = "none";
+}
+
+function mostrar( id ) {
+  document.getElementById( id ).style.display = 'block';
 }
