@@ -366,9 +366,9 @@ function trackKeys(keys) {
       event.preventDefault();
     }
   }
-  window.addEventListener("keydown", track);
-  window.addEventListener("keyup", track);
-  down.unregister = () => {
+    window.addEventListener("keydown", track);
+    window.addEventListener("keyup", track);
+    down.unregister = () => {
     window.removeEventListener("keydown", track);
     window.removeEventListener("keyup", track);
   };
@@ -378,7 +378,6 @@ function trackKeys(keys) {
 async function runGame ( plans, Display )
 {
   this.lives = 3;
-  this.ended = false;
   this.livesView = document.getElementById( "livesli" );
   this.nivelView = document.getElementById( "nivelli" );
 
@@ -387,11 +386,6 @@ async function runGame ( plans, Display )
     console.log( `level: ${level + 1}`, `lives: ${lives}` );
     let status = await runLevel( new Level( plans[ level ] ),
       Display );
-    if (this.lives <= 0 || this.level == 2)
-    {
-      endGame();
-    }
-
     if ( status == "won" ) {
       level++;
       this.nivelView.innerHTML = "Level: " + `${level + 1}`;
@@ -400,9 +394,9 @@ async function runGame ( plans, Display )
       this.livesView.innerHTML = "Lives: " + this.lives;
     }
   }
-    if ( lives <= 0 ) {
+  if ( lives <= 0 ) {
     mostrar( 'gameOver' );
-  } else if ( lives == 2) {
+  } else {
     mostrar( 'youWin' );
   }
 }
