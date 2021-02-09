@@ -14,7 +14,7 @@ html{
   padding: 0;       
 }
 .lava { 
-  background: rgb(255, 100, 100);
+  background: rgb(255, 0, 0);
 }
 .wall { 
   background: white;
@@ -27,7 +27,7 @@ html{
   background: rgb(241, 229, 89);
 }
 .player { 
-  background: rgb(64, 64, 64);
+  background: linear-gradient(green, rgba(105, 45, 5, 0.808));
 }
 
 .game {
@@ -51,8 +51,9 @@ body {
 
 .lista {
   font-size: 17px;
-  top: 64%;
+  top: 70%;
   position: absolute;
+  font-weight: bold;
   color: white;
   list-style-type: none;
   font-family: 'Raleway', Arial, sans-serif;
