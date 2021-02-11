@@ -3,7 +3,6 @@
 html{
   background: green;
   overflow: hidden;
-  max-height: 506px;
 }
 
 .background {   
@@ -39,6 +38,10 @@ html{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;*/
+}
+
+.monster {
+  background: orange;
 }
 
 .game {
