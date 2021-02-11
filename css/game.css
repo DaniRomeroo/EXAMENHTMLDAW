@@ -34,14 +34,14 @@ html{
   
 .player { 
   background: linear-gradient(to bottom, green 50%, rgba(105, 45, 5, 0.808) 50%);
-  /*background-image: url("");
+  /*background-image: url("https://i.pinimg.com/originals/e8/85/0a/e8850a26cdef4cb4352801a4f9de7445.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;*/
 }
 
 .monster {
-  background: orange;
+  background: rgb(1, 207, 190);
 }
 
 .game {
@@ -65,7 +65,7 @@ body {
 
 .lista {
   font-size: 17px;
-  top: 78%;
+  top: 590px;
   position: absolute;
   font-weight: bold;
   color: white;
