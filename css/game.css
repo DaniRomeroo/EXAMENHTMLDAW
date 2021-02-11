@@ -70,10 +70,11 @@ body {
   font-weight: bold;
   color: white;
   list-style-type: none;
-  font-family: 'Raleway', Arial, sans-serif;
   text-transform: uppercase;
+  font-family: 'Raleway', Arial, sans-serif;
   z-index: 999;
 }
+
 
 #gana2,
 #perdi2 {
@@ -190,6 +191,20 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-family: 'Raleway'Arial,
+  sans-serif;
+}
+
+.title {
+  position: absolute;
+  top: 220px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Raleway', Arial, sans-serif;
+  color: rgb(217, 224, 146);
 }
 
 @-webkit-keyframes rotate {
