@@ -8,4 +8,5 @@
 ### El juego consiste en un fondo estático, dispuesto como una cuadrícula, con los elementos móviles superpuestos sobre ese fondo. 
 ### Cada campo de la cuadrícula está vacío, sólido o de lava. Los elementos móviles son el jugador, las monedas, ciertas piezas de lava y un boss final llamado monstruo.
 
-                                      Copyright © 2020 Dani Romero. All rights reserved
+
+   Copyright © 2020 Dani Romero. All rights reserved
